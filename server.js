@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node-
 
 // Modules
 var debug = require('debug')('raneto');
@@ -21,3 +21,12 @@ var app = raneto(config);
 var server = app.listen(app.get('port'), app.get('host'), () => {
   debug(`Express HTTP server listening on port ${server.address().port}`);
 });
+
+// Capability things
+// https://www.freecodecamp.org/news/node-js-child-processes-everything-you-need-to-know-e69498fe970a/
+let { spawn } = require('child_process');
+let script = spawn('sh', ['/workspaces/Raneto/test.sh']); 
+script.stdout.on('data', (data) => {
+  console.log(`script stdout:\n${data}`);
+});
+
