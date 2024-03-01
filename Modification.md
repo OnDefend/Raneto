@@ -19,3 +19,9 @@ script.stdout.on('data', (data) => {
   console.log(`script stdout:\n${data}`);
 });
 ```
+
+## Execution - Windows
+Running the project on windows is slightly different than running on linux. The following commandline currently works:
+```powershell
+npm run start_win
+```
